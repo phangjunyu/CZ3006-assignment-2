@@ -22,9 +22,9 @@ function blurTotalCost(){
       });
 }
 
-function submitOrder(){
+function validateOrder(){
     if ($('#submit').prop("disabled"))
-        return;
+        return false;
     var name = $('#customer');
     if (name.val() == "" || name.val() == NaN){
         alert("Please fill in your name.");
@@ -32,13 +32,13 @@ function submitOrder(){
         name.focus(function(){
             name.removeClass("text-box-highlight");
         })
-        return;
+        return false;
     }
     if ( !$('#visa').is(":checked") && !$('#mastercard').is(":checked") && !$('#discover').is(":checked")){
         alert("Please select a payment method")
-        return;
+        return false;
     }
-    console.log("success")
+    return true;
 }
 
 function isNumberKey(evt){
@@ -62,7 +62,7 @@ function updatePrice(){
 
     $('#apple-final-qty').text(apples);
     $('#banana-final-qty').text(bananas);
-    $('#orange-final-qty').text(oranges);
+    $('#orange-final-qty').val(oranges);
 
     var apples_price = +((apples*apple_price).toFixed(2));
     var bananas_price = +((bananas*banana_price).toFixed(2));
@@ -70,7 +70,7 @@ function updatePrice(){
 
     $('#apple-final-price').text(apples_price);
     $('#banana-final-price').text(bananas_price);
-    $('#orange-final-price').text(oranges_price);
+    $('#orange-final-price').val(oranges_price);
 
     var total_cost = +((apples_price + bananas_price + oranges_price).toFixed(2))
     $('#total-cost').val(total_cost);

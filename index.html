@@ -61,101 +61,111 @@
                             </div>
                           </div>
                 </div>
+                <!-- payment form -->
                 <div class = "col-sm-4">
-                    <div class = "payment-info">
-                        <div class="card">
-                            <div class="card-header">
-                                Payment
-                            </div>
-                            <div class="card-body">
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="visa" name="customRadioInline1" class="custom-control-input">
-                                    <label class="custom-control-label" for="visa">
-                                        <img class="payment-icons" src = "images/Visa-icon.png">
-                                    </label>
+                    <form name="paymentForm" method="post" action="server.php" onsubmit="return validateOrder()">
+                        <div class = "payment-info">
+                            <div class="card">
+                                <div class="card-header">
+                                    Payment
                                 </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="mastercard" name="customRadioInline1" class="custom-control-input">
-                                    <label class="custom-control-label" for="mastercard">
-                                        <img class="payment-icons" src = "images/mastercard-icon.png">
-                                    </label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="discover" name="customRadioInline1" class="custom-control-input">
-                                        <label class="custom-control-label" for="discover">
-                                            <img class="payment-icons" src = "images/discover-icon.png">
-                                        </label>
-                                </div>
-                            </div>
-                        </div>
-                                <ul class="list-group list-group-flush payment-info">
-                                    <li class="list-group-item list-group-item-secondary payment-info-admin">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                Fruit
-                                            </div>
-                                            <div class="col-sm-4">
-                                                Quantity
-                                            </div>
-                                            <div class="col-sm-4">
-                                                Cost
-                                            </div>  
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                Apples
-                                            </div>
-                                            <div class="col-sm-4" id="apple-final-qty">
-                                            </div>
-                                            <div class="col-sm-4" id="apple-final-price">
-                                            </div>  
-                                        </div>
-                                    </li>
-                                  <li class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                Bananas
-                                            </div>
-                                            <div class="col-sm-4" id="banana-final-qty">
-                                            </div>
-                                            <div class="col-sm-4" id="banana-final-price">
-                                            </div>  
-                                        </div>
-                                  </li>
-                                  <li class="list-group-item">
-                                        <div class="row">
-                                            <div class="col-sm-4">
-                                                Oranges
-                                            </div>
-                                            <div class="col-sm-4" id="orange-final-qty">
-                                            </div>
-                                            <div class="col-sm-4" id="orange-final-price">
-                                            </div>  
-                                        </div>
-                                  </li>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><b>Total Cost: $</b></span>
-                                            </div>
-                                            <input type="text" class="form-control" id="total-cost">
-                                        </div>
-                                </ul>
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm">
-                                            <input class="form-control" type="text" placeholder="Name*" id="customer">
-                                        </div>
-                                        <div class="col-sm">
-                                            <button type="button" class="btn btn-primary" onclick="submitOrder()" id="submit">Submit</a>
-                                        </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="visa" name="customRadioInline1" class="custom-control-input">
+                                        <label class="custom-control-label" for="visa">
+                                            <img class="payment-icons" src = "images/Visa-icon.png">
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                        <input type="radio" id="mastercard" name="customRadioInline1" class="custom-control-input">
+                                        <label class="custom-control-label" for="mastercard">
+                                            <img class="payment-icons" src = "images/mastercard-icon.png">
+                                        </label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" id="discover" name="customRadioInline1" class="custom-control-input">
+                                            <label class="custom-control-label" for="discover">
+                                                <img class="payment-icons" src = "images/discover-icon.png">
+                                            </label>
                                     </div>
                                 </div>
-                    </div>
+                            </div>
+                                    <ul class="list-group list-group-flush payment-info">
+                                        <li class="list-group-item list-group-item-secondary payment-info-admin">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    Fruit
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    Quantity
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    Cost
+                                                </div>  
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    Apples
+                                                </div>
+                                                <div class="col-sm-4" id="apple-final-qty">
+                                                </div>
+                                                <div class="col-sm-4" id="apple-final-price">
+                                                </div>  
+                                            </div>
+                                        </li>
+                                    <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    Bananas
+                                                </div>
+                                                <div class="col-sm-4" id="banana-final-qty" name="banana-final-qty">
+                                                </div>
+                                                <div class="col-sm-4" id="banana-final-price">
+                                                </div>  
+                                            </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    Oranges
+                                                </div>
+                                                <input type="text" readonly class="col-sm-4 payment-hidden-form" id="orange-final-qty">
+                                                <input type="text" readonly class="col-sm-4 payment-hidden-form" id="orange-final-price">
+                                            </div>
+                                    </li>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><b>Total Cost: $</b></span>
+                                                </div>
+                                                <input type="text" class="form-control" id="total-cost">
+                                            </div>
+                                    </ul>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <input class="form-control" type="text" placeholder="Name*" id="customer">
+                                            </div>
+                                            <div class="col-sm">
+                                                <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
+            <!-- credit -->
+            <div>
+                <p class="lead">
+                        Done by: Phang Jun Yu
+                        <br>
+                        CZ3006 Net-Centric Computing Assignment 2
+                </p>
+            </div>
         </div>
+        <!-- user script -->
         <script src="js/script.js"></script>
   </body>
 </html>

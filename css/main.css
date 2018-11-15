@@ -34,3 +34,8 @@
     text-align:center;
     font-weight: bold;
 }
+
+.payment-hidden-form{
+    border: 0;
+    text-align: center;
+}
