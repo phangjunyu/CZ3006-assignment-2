@@ -2,18 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <!-- mobile responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- css -->
     <link type="text/css" rel="stylesheet" href="css/main.css" />
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <title>CZ3006 Assignment 2 - Fruit Shop</title>
   </head>
   <body>
-        <div class="jumbotron">
+        <div class="jumbotron title-banner">
             <h1 class="display-4">Apples, Bananas and Oranges ONLY!</h1>
             <p class="lead">We specialize in selling only the freshest, most nutritious, best-tasting apples, bananas and oranges.</p>
             <hr class="my-4">
             <p>These are the best prices you can get anywhere. If you find a lower price, we'll match it!</p>
+            <hr class="my-1">
+            <em>The order cannot be submitted if the total quantity of fruits selected is 0.</em>
         </div>
         <div class = "container-fluid">
             <div class="row">
@@ -81,18 +88,67 @@
                                 </div>
                             </div>
                         </div>
-                                <ul class="list-group list-group-flush">
-                                  <li class="list-group-item">Apples</li>
-                                  <li class="list-group-item">Bananas</li>
-                                  <li class="list-group-item">Oranges</li>
+                                <ul class="list-group list-group-flush payment-info">
+                                    <li class="list-group-item list-group-item-secondary payment-info-admin">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Fruit
+                                            </div>
+                                            <div class="col-sm-4">
+                                                Quantity
+                                            </div>
+                                            <div class="col-sm-4">
+                                                Cost
+                                            </div>  
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Apples
+                                            </div>
+                                            <div class="col-sm-4" id="apple-final-qty">
+                                            </div>
+                                            <div class="col-sm-4" id="apple-final-price">
+                                            </div>  
+                                        </div>
+                                    </li>
+                                  <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Bananas
+                                            </div>
+                                            <div class="col-sm-4" id="banana-final-qty">
+                                            </div>
+                                            <div class="col-sm-4" id="banana-final-price">
+                                            </div>  
+                                        </div>
+                                  </li>
+                                  <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Oranges
+                                            </div>
+                                            <div class="col-sm-4" id="orange-final-qty">
+                                            </div>
+                                            <div class="col-sm-4" id="orange-final-price">
+                                            </div>  
+                                        </div>
+                                  </li>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><b>Total Cost: $</b></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="total-cost">
+                                        </div>
                                 </ul>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm">
-                                            <input class="form-control" type="text" placeholder="Name*">
+                                            <input class="form-control" type="text" placeholder="Name*" id="customer">
                                         </div>
                                         <div class="col-sm">
-                                            <a href="#" class="btn btn-primary">Submit</a>
+                                            <button type="button" class="btn btn-primary" onclick="submitOrder()" id="submit">Submit</a>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +156,6 @@
                 </div>
             </div>
         </div>
-
         <script src="js/script.js"></script>
   </body>
 </html>
