@@ -22,6 +22,7 @@ function blurTotalCost(){
       });
 }
 
+// by right, form data should be validated on server side instead of client side
 function validateOrder(){
     if ($('#submit').prop("disabled"))
         return false;
@@ -60,16 +61,16 @@ function updatePrice(){
     if (oranges == '' || oranges == NaN)
         oranges = 0;
 
-    $('#apple-final-qty').text(apples);
-    $('#banana-final-qty').text(bananas);
+    $('#apple-final-qty').val(apples);
+    $('#banana-final-qty').val(bananas);
     $('#orange-final-qty').val(oranges);
 
     var apples_price = +((apples*apple_price).toFixed(2));
     var bananas_price = +((bananas*banana_price).toFixed(2));
     var oranges_price = +((oranges*orange_price).toFixed(2));
 
-    $('#apple-final-price').text(apples_price);
-    $('#banana-final-price').text(bananas_price);
+    $('#apple-final-price').val(apples_price);
+    $('#banana-final-price').val(bananas_price);
     $('#orange-final-price').val(oranges_price);
 
     var total_cost = +((apples_price + bananas_price + oranges_price).toFixed(2))
