@@ -23,24 +23,33 @@
                               <img class="card-img-top fruit-picture" src="images/apple.jpg" alt="Card image cap">
                               <div class="card-body">
                                 <h5 class="card-title">Apples</h5>
-                                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text fruit-price">$0.69</p>
+                                <div class="form-group">
+                                    <label for="apple-qty">Quantity</label>
+                                    <input type="number" class="form-control" id="apple-qty" onkeypress="isNumberKey(event)">
+                                </div>
                               </div>
                             </div>
                             <div class="card">
                               <img class="card-img-top fruit-picture" src="images/banana.jpg" alt="Card image cap">
                               <div class="card-body">
                                 <h5 class="card-title">Bananas</h5>
-                                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text fruit-price">$0.39</p>
+                                <div class="form-group">
+                                    <label for="banana-qty">Quantity</label>
+                                    <input type="number" class="form-control" id="banana-qty" onkeypress="isNumberKey(event)">
+                                </div>
                               </div>
                             </div>
                             <div class="card">
                               <img class="card-img-top fruit-picture" src="images/orange.jpg" alt="Card image cap">
                               <div class="card-body">
                                 <h5 class="card-title">Oranges</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <p class="card-text fruit-price">$0.59</p>
+                                <div class="form-group">
+                                    <label for="orange-qty">Quantity</label>
+                                    <input type="number" class="form-control" id="orange-qty" onkeypress="isNumberKey(event)">
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -78,11 +87,20 @@
                                   <li class="list-group-item">Oranges</li>
                                 </ul>
                                 <div class="card-body">
-                                    <a href="#" class="btn btn-primary">Checkout</a>
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <input class="form-control" type="text" placeholder="Name*">
+                                        </div>
+                                        <div class="col-sm">
+                                            <a href="#" class="btn btn-primary">Submit</a>
+                                        </div>
+                                    </div>
                                 </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script src="js/script.js"></script>
   </body>
 </html>

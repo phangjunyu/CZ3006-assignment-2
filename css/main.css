@@ -3,4 +3,12 @@
 }
 
 .fruit-picture{
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.fruit-price{
+    margin-bottom: 0;
+    color: green;
 }
