@@ -54,9 +54,9 @@
 		$updated_oranges = $current_orders[1] + $orange_final_qty;
 		$updated_bananas = $current_orders[2] + $banana_final_qty;
 		
-		// windows uses \r\n
-		$updated_orders = "Total number of apples: ".$updated_apples."\r\n";
-		$updated_orders .= "Total number of oranges: ".$updated_oranges."\r\n";
+		// windows uses \r\n but test will be run on linux so we use \n
+		$updated_orders = "Total number of apples: ".$updated_apples."\n";
+		$updated_orders .= "Total number of oranges: ".$updated_oranges."\n";
 		$updated_orders .= "Total number of bananas: ".$updated_bananas;
 
 		file_put_contents($filename, $updated_orders);
