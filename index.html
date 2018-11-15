@@ -38,17 +38,6 @@
                               </div>
                             </div>
                             <div class="card">
-                              <img class="card-img-top fruit-picture" src="images/banana.jpg" alt="Card image cap">
-                              <div class="card-body">
-                                <h5 class="card-title">Bananas</h5>
-                                <p class="card-text fruit-price">$0.39</p>
-                                <div class="form-group">
-                                    <label for="banana-qty">Quantity</label>
-                                    <input type="number" class="form-control" id="banana-qty" onkeypress="isNumberKey(event)">
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card">
                               <img class="card-img-top fruit-picture" src="images/orange.jpg" alt="Card image cap">
                               <div class="card-body">
                                 <h5 class="card-title">Oranges</h5>
@@ -58,6 +47,17 @@
                                     <input type="number" class="form-control" id="orange-qty" onkeypress="isNumberKey(event)">
                                 </div>
                               </div>
+                            </div>
+                            <div class="card">
+                                <img class="card-img-top fruit-picture" src="images/banana.jpg" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bananas</h5>
+                                    <p class="card-text fruit-price">$0.39</p>
+                                    <div class="form-group">
+                                        <label for="banana-qty">Quantity</label>
+                                        <input type="number" class="form-control" id="banana-qty" onkeypress="isNumberKey(event)">
+                                    </div>
+                                </div>
                             </div>
                           </div>
                 </div>
@@ -71,19 +71,19 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="visa" name="customRadioInline1" class="custom-control-input">
+                                        <input type="radio" id="visa" name="customRadioInline1" class="custom-control-input" value="Visa">
                                         <label class="custom-control-label" for="visa">
                                             <img class="payment-icons" src = "images/Visa-icon.png">
                                         </label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" id="mastercard" name="customRadioInline1" class="custom-control-input">
+                                        <input type="radio" id="mastercard" name="customRadioInline1" class="custom-control-input" value="Mastercard">
                                         <label class="custom-control-label" for="mastercard">
                                             <img class="payment-icons" src = "images/mastercard-icon.png">
                                         </label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" id="discover" name="customRadioInline1" class="custom-control-input">
+                                            <input type="radio" id="discover" name="customRadioInline1" class="custom-control-input" value="Discover">
                                             <label class="custom-control-label" for="discover">
                                                 <img class="payment-icons" src = "images/discover-icon.png">
                                             </label>
@@ -114,34 +114,34 @@
                                             </div>
                                         </li>
                                     <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    Bananas
-                                                </div>
-                                                <input type="text" readonly class="col-sm-4 payment-hidden-form" id="banana-final-qty" name="banana-final-qty">
-                                                <input type="text" readonly class="col-sm-4 payment-hidden-form" id="banana-final-price" name="banana-final-price">  
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Oranges
                                             </div>
+                                            <input type="text" readonly class="col-sm-4 payment-hidden-form" id="orange-final-qty" name="orange-final-qty">
+                                            <input type="text" readonly class="col-sm-4 payment-hidden-form" id="orange-final-price" name="orange-final-price">
+                                        </div>
                                     </li>
                                     <li class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-sm-4">
-                                                    Oranges
-                                                </div>
-                                                <input type="text" readonly class="col-sm-4 payment-hidden-form" id="orange-final-qty" name="orange-final-qty">
-                                                <input type="text" readonly class="col-sm-4 payment-hidden-form" id="orange-final-price" name="orange-final-qty">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                Bananas
                                             </div>
+                                            <input type="text" readonly class="col-sm-4 payment-hidden-form" id="banana-final-qty" name="banana-final-qty">
+                                            <input type="text" readonly class="col-sm-4 payment-hidden-form" id="banana-final-price" name="banana-final-price">  
+                                        </div>
                                     </li>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text"><b>Total Cost: $</b></span>
                                                 </div>
-                                                <input type="text" class="form-control" id="total-cost">
+                                                <input type="text" class="form-control" id="total-cost" name="total-cost">
                                             </div>
                                     </ul>
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm">
-                                                <input class="form-control" type="text" placeholder="Name*" id="customer">
+                                                <input class="form-control" type="text" placeholder="Name*" id="customer" name="name">
                                             </div>
                                             <div class="col-sm">
                                                 <button type="submit" class="btn btn-primary" id="submit">Submit</button>
