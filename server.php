@@ -25,12 +25,11 @@
 		$total_cost = $_POST['total-cost'];
 
 		// store data in order.txt
-		$current_orders = array(0, 0, 0);
 		$filename = "order.txt";
 		$file = fopen($filename, 'r') or exit("unable to open file($filename)");
 
 		$regex = '/^.*: (?<count>\d*)/';
-
+		$current_orders = array(0, 0, 0);
 		if ($file) {
 			$i = 0;
 			while (($line = fgets($file)) !== false) {
